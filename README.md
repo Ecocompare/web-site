@@ -11,10 +11,10 @@ Qualitative because instead of a black box that calculates impacts from activity
 Positive because we value only the issues under control without blacklisting those who have yet to be worked.
 
 # Framework
-Custom PHP MVC framework (model, view, controler)
-View templates in french and english 
-Mysql database
-REST API Webservices
+* Custom PHP MVC framework (model, view, controler)
+* View templates in french and english 
+* Mysql database
+* REST API Webservices
 
 # Contribute
 The website is not responsive on mobile and tablet. The presentation layer (HTML / CSS) should be rewritten
