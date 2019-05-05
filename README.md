@@ -19,7 +19,7 @@ Positive because we value only the issues under control without blacklisting tho
 * REST API Webservices
 
 # screenshots
-![Screenshot](https://www.ecocompare.com/screenshots/home.png "home page")
+<img src="https://www.ecocompare.com/screenshots/home.png" width="100" height="100"/>
 
 # Contribute
 The website is not responsive on mobile and tablet. The presentation layer (HTML / CSS) should be rewritten
