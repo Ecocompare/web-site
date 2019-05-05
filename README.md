@@ -18,6 +18,9 @@ Positive because we value only the issues under control without blacklisting tho
 * Mysql database
 * REST API Webservices
 
+# screenshots
+![Alt text](https://www.ecocompare.com/screenshots/home.png "home page")
+
 # Contribute
 The website is not responsive on mobile and tablet. The presentation layer (HTML / CSS) should be rewritten
 The iPhone and Android mobile apps were made with Adobe Phonegap (separate projects) but must be modified for compatibility with the latest OS versions.
