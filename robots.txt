@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /backup
+Disallow: /login
+Disallow: /services
+Disallow: /methodologie
+
+user-agent: AhrefsBot
+disallow: / 
+

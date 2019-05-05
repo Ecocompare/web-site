@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div id="fb-root"></div>  
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script>
+
+$(document).ready(function() {
+localStorage.removeItem("fb");	
+$.ajaxSetup({ cache: false });
+$.getScript('//connect.facebook.net/en_UK/all.js', function(){
+	
+FB.init({
+appId: '183602211910',
+status : true, // Check Facebook Login status
+cookie : false,	// Enable cookie
+xfbml : true // Look for social plugins on the page
+});
+  
+  //FB.Event.subscribe('auth.logout', function() {});
+  FB.Event.subscribe('auth.login', function(response) {
+  	
+  });
+  
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      FB.api('/me', function(rep) {
+      	
+        $.ajax({
+        	url:'http://www.ecocompare.com/mobile/checkUserFacebook.php',
+        	data:{id: rep.id, name: rep.name, email: rep.email, gender: rep.gender,},
+        	type: 'GET',
+        	contentType:'application/json',
+        	dataType: 'json',
+        	success: function(data){
+        		console.log('Success facebook check');
+        		 if(data.id){
+        			 localStorage.setItem("fb",  "idUser:"+data.id+":fb:true:validUser:"+data.isValid);
+            	     window.location.href = "close.html";
+        		 }
+        	},
+        	error: function(error){
+        		console.log('Error check facebook user');
+        	}
+        });
+      	
+      });
+    }else if (response.status === 'not_authorized') {
+      login();
+    }else{
+      login();
+    }
+  });
+});
+
+  function login(){
+  	FB.login(function(response) {
+  		   if(response.authResponse){
+           	 console.log('login');
+           }
+        },{scope: 'email,public_profile'});
+  }
+  
+});	
+
+</script>
+
+
+<div id="status" style="font-size:3.0rem;">
+	Loading ...
+</div>
+
+
+</body>
+</html>

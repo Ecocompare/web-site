@@ -1,0 +1,224 @@
+04:48:47 adresse deja utilisée
+04:50:01 adresse deja utilisée
+04:51:36 adresse deja utilisée
+04:51:57 adresse deja utilisée
+04:53:07 adresse deja utilisée
+04:58:21 adresse deja utilisée
+04:58:30 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+04:58:30 mail null 
+05:03:42 adresse deja utilisée
+05:03:52 SELECT * from iphone_users WHERE email='zorglub26@gmail.com' 
+05:03:52 adresse deja utilisée
+05:04:06 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+05:04:06 mail null 
+05:04:06 creation BDD 
+05:07:03 adresse deja utilisée
+05:07:12 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+05:07:12 mail null 
+05:07:12 creation BDD 
+05:07:12 fin creation BDD 
+05:09:30 adresse deja utilisée
+05:09:42 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+05:09:42 mail null 
+05:09:42 creation BDD 
+05:09:42 fin creation BDD 
+05:13:47 adresse deja utilisée
+05:14:00 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+05:14:00 mail null 
+05:14:00 creation BDD 
+05:14:00 fin creation BDD 
+05:14:00mailValidation(p_montier@hotmail.com, 521b70b867e01521b70b867e3b) 
+05:14:00 fin envoi mail  
+05:14:00 SELECT * from iphone_users WHERE email='p_montier@hotmail.com' 
+05:14:00 recup user 
+05:14:00 create user stat 
+05:14:00 OK  
+05:18:45 creation BDD 
+05:18:45mailValidation(dams_435@hotmail.fr, 521b71d58f910521b71d58f94a) 
+05:18:45 OK  
+05:28:30 creation BDD 
+05:28:30mailValidation(opop@yopmail.com, 521b741e7afaf521b741e7b006) 
+05:28:30 OK  
+02:54:20 creation BDD 
+2013/11/07 14:11:20 mailValidation(thomas@ecoworking.fr, 527b9b8c8dfd8527b9b8c8e013) 
+02:54:20 OK  
+06:47:46 creation BDD 
+2013/11/21 18:11:46 mailValidation(mr_tth@hotmail.com, 528e474210e44528e474210e7f) 
+06:47:46 OK  
+04:19:54 creation BDD 
+2013/12/05 16:12:54 mailValidation(unconsommateurresponsable@hotmail.fr, 52a0999a0f18652a0999a0f1c1) 
+04:19:54 OK  
+04:45:22 creation BDD 
+2013/12/05 16:12:22 mailValidation(consommation_responsable@hotmail.fr, 52a09f920226752a09f92022a2) 
+04:45:22 OK  
+04:46:56 creation BDD 
+2013/12/05 16:12:56 mailValidation(consommation_responsable@hotmail.com, 52a09ff07784452a09ff07787e) 
+04:46:56 OK  
+04:49:30 creation BDD 
+2013/12/05 16:12:30 mailValidation(consommation_responsable@ootlook.fr, 52a0a08a67d2e52a0a08a67d69) 
+04:49:30 OK  
+04:50:53 creation BDD 
+2013/12/05 16:12:53 mailValidation(consommation_responsable@outlook.fr, 52a0a0dd14b4b52a0a0dd14b87) 
+04:50:53 OK  
+09:29:34 creation BDD 
+2013/12/19 09:12:34 mailValidation(jujugrall@gmail.com, 52b2ae6e4e0d952b2ae6e4e116) 
+09:29:34 OK  
+06:41:19 creation BDD 
+2014/01/17 18:01:20 mailValidation(qcha59@hotmail.fr, 52d96b3f398f152d96b3f3992f) 
+06:41:21 OK  
+11:22:50 creation BDD 
+2014/04/12 11:04:50 mailValidation(k.sotta@gmail.com, 534905ea18d6b534905ea18da8) 
+11:22:50 OK  
+09:50:03 creation BDD 
+2014/04/19 21:04:03 mailValidation(elisabeth.lamm63@gmail.com, 5352d36bd26f25352d36bd272f) 
+09:50:03 OK  
+07:50:17 creation BDD 
+2014/05/03 19:05:17 mailValidation(bbfree@free.fr, 53652c598c07153652c598c0b1) 
+07:50:17 OK  
+01:29:09 creation BDD 
+2014/05/05 13:05:09 mailValidation(zendaouda@gmail.com, 536776050105b5367760501099) 
+01:29:09 OK  
+10:29:30 creation BDD 
+2014/06/04 22:06:30 mailValidation(patcret@neuf.fr, 538f81aa0f164538f81aa0f1a0) 
+10:29:30 OK  
+10:52:04 creation BDD 
+2014/07/09 10:07:04 mailValidation(squerlioz@idnext.net, 53bd02b490af853bd02b490b35) 
+10:52:04 OK  
+04:13:21 creation BDD 
+2014/07/10 16:07:21 mailValidation(ysf.benkassem@gmail.com, 53be9f812a54553be9f812a582) 
+04:13:21 OK  
+10:06:29 creation BDD 
+2014/08/02 10:08:29 mailValidation(alberte.ventre@live.fr, 53dc9c05814de53dc9c058151b) 
+10:06:29 OK  
+08:34:17 creation BDD 
+2015/03/06 08:03:17 mailValidation(hostellerie.du.lys@wanadoo.fr, 54f958798900354f9587989041) 
+08:34:17 OK  
+09:59:28 creation BDD 
+2015/04/08 21:04:28 mailValidation(ni.mo.de@openmailbox.org, 552588a016268552588a0162a6) 
+09:59:28 OK  
+05:38:33 creation BDD 
+2015/04/22 17:04:33 mailValidation(william-merle@hotmail.fr, 5537c079dee0c5537c079dee4a) 
+05:38:34 OK  
+01:31:26 creation BDD 
+2015/07/20 13:07:26 mailValidation(delph33@hotmail.fr, 55acdc0e7611955acdc0e76157) 
+01:31:26 OK  
+06:02:23 creation BDD 
+2015/10/05 06:10:23 mailValidation(Charazed23000@hotmail.fr, 5612126fc3b695612126fc3ba3) 
+06:02:24 OK  
+06:05:45 creation BDD 
+2015/10/05 06:10:45 mailValidation(natachabourhis@gmail.com, 56121339472ff561213394733e) 
+06:05:45 OK  
+06:14:24 creation BDD 
+2015/10/05 06:10:24 mailValidation(gerard.galera@gmail.com, 5612154007ba45612154007be5) 
+06:14:24 OK  
+07:09:00 creation BDD 
+2015/10/05 07:10:00 mailValidation(molina.herminia@orange.fr, 5612220cd8fb55612220cd8ff3) 
+07:09:01 OK  
+10:50:31 creation BDD 
+2015/11/17 10:11:31 mailValidation(anne@neworganicworld.fr, 564b067731cc4564b067731d07) 
+10:50:31 OK  
+09:28:46 creation BDD 
+2015/12/05 09:12:46 mailValidation(florence.charre@yahoo.fr, 5662ae4e034135662ae4e03454) 
+09:28:46 OK  
+11:40:31 creation BDD 
+2016/02/24 23:02:31 mailValidation(haltiro@yahoo.fr, 56ce3f6f68efd56ce3f6f68f38) 
+11:40:31 OK  
+08:15:31 creation BDD 
+2016/03/14 08:03:31 mailValidation(hofflerbes@yahoo.fr, 56e67323a9f1356e67323a9f55) 
+08:15:31 OK  
+11:50:09 creation BDD 
+2016/04/21 11:04:09 mailValidation(friedrich.van.zimmel@gmail.com, 5718be719c1b15718be719c1f0) 
+11:50:09 OK  
+07:24:10 creation BDD 
+2016/04/22 19:04:11 mailValidation(thierry.trubian@gmail.com, 571a7a5af2d62571a7a5af2da3) 
+07:24:11 OK  
+08:05:02 creation BDD 
+2016/04/29 08:04:02 mailValidation(aurely2401@yahoo.fr, 572315aede6a5572315aede6df) 
+08:05:03 OK  
+08:50:39 creation BDD 
+2016/05/10 08:05:39 mailValidation(wanguissia@hotmail.fr, 5731a0df6fb2e5731a0df6fb6e) 
+08:50:39 OK  
+07:56:19 creation BDD 
+2018/01/22 19:01:19 mailValidation(maisonboisecolo@gmail.com, 5a6641e3928855a6641e3928ce) 
+07:56:19 OK  
+12:17:09 creation BDD 
+2018/03/12 12:03:09 mailValidation(Hubert.berit-debat@orange.fr, 5aa66fc5318d85aa66fc531922) 
+12:17:09 OK  
+10:29:56 creation BDD 
+2018/03/16 10:03:56 mailValidation(Teddysorres343@gmail.com, 5aab9ca49dacb5aab9ca49db10) 
+10:29:56 OK  
+08:28:48 creation BDD 
+2018/03/25 20:03:48 mailValidation(alexandrerea@hotmail.com, 5ab80680bd6555ab80680bd6b4) 
+08:28:48 OK  
+01:42:28 creation BDD 
+2018/04/03 13:04:28 mailValidation(ptitebambou@hotmail.fr, 5ac384c4019235ac384c40196f) 
+01:42:28 OK  
+06:47:51 creation BDD 
+2018/05/24 18:05:51 mailValidation(francois@castillan.fr, 5b0708d71c8415b0708d71c893) 
+06:47:51 OK  
+01:09:56 creation BDD 
+2018/06/20 13:06:56 mailValidation(floriane-piotto.esc@em-lyon.com, 5b2a5224506795b2a5224506cb) 
+01:09:56 OK  
+11:23:15 creation BDD 
+2018/07/04 11:07:15 mailValidation(florence@3it.com, 5b3cae23621995b3cae23621db) 
+11:23:15 OK  
+11:24:02 creation BDD 
+2018/07/04 11:07:02 mailValidation(idc.isabelle@gmail.com, 5b3cae5219dd15b3cae5219e17) 
+11:24:02 OK  
+11:24:59 creation BDD 
+2018/07/04 11:07:59 mailValidation(millet.francoise@free.fr, 5b3cae8bdf49f5b3cae8bdf4f9) 
+11:25:00 OK  
+11:26:11 creation BDD 
+2018/07/04 11:07:11 mailValidation(hchamparnaud@gmail.com, 5b3caed3e57645b3caed3e57a7) 
+11:26:12 OK  
+11:33:05 creation BDD 
+2018/07/04 11:07:05 mailValidation(Marjodiaz@orange.fr, 5b3cb071c7c3c5b3cb071c7ca7) 
+11:33:05 OK  
+11:33:28 creation BDD 
+2018/07/04 11:07:28 mailValidation(didier_simonin_ts_eads@yahoo.fr, 5b3cb088365075b3cb0883654e) 
+11:33:28 OK  
+11:33:59 creation BDD 
+2018/07/04 11:07:59 mailValidation(daniel.moraly@wanadoo.fr, 5b3cb0a7c2ac35b3cb0a7c2b08) 
+11:33:59 OK  
+11:45:57 creation BDD 
+2018/07/04 11:07:57 mailValidation(thierryponce74@gmail.com, 5b3cb3759c1b65b3cb3759c203) 
+11:45:57 OK  
+11:47:23 creation BDD 
+2018/07/04 11:07:23 mailValidation(jraxach@free.fr, 5b3cb3cb391295b3cb3cb3916d) 
+11:47:23 OK  
+01:32:14 creation BDD 
+2018/07/04 13:07:14 mailValidation(bleuette77@wanadoo.fr, 5b3ccc5e15ae25b3ccc5e15b24) 
+01:32:14 OK  
+04:20:14 creation BDD 
+2018/07/04 16:07:14 mailValidation(donachau@hotmail.com, 5b3cf3becd3d05b3cf3becd41c) 
+04:20:15 OK  
+07:35:48 creation BDD 
+2018/08/07 07:08:48 mailValidation(magnetiseur31@live.fr, 5b694bd4c109f5b694bd4c10f5) 
+07:35:49 OK  
+04:19:44 creation BDD 
+2018/08/23 16:08:44 mailValidation(chrishooley101@hotmail.com, 5b7edea04fac65b7edea04fb4d) 
+04:19:44 OK  
+07:52:44 creation BDD 
+2018/10/14 07:10:44 mailValidation(Celia.bekhoucha@gmail.com, 5bc2f5cc43c175bc2f5cc43c5a) 
+07:52:44 OK  
+12:29:56 creation BDD 
+2018/11/15 12:11:56 mailValidation(guy.pretceille@orange.fr, 5bed66c4e889b5bed66c4e8903) 
+12:29:57 OK  
+11:46:18 creation BDD 
+2018/11/15 23:11:18 mailValidation(celyne.28@hotmail.fr, 5bee054a3921b5bee054a39263) 
+11:46:18 OK  
+10:18:03 creation BDD 
+2018/12/16 10:12:03 mailValidation(domi50.marie49@orange.fr, 5c16265b403085c16265b40356) 
+10:18:03 OK  
+10:16:07 creation BDD 
+2018/12/28 10:12:07 mailValidation(jy.vetele@gmail.com, 5c25f7e7c87d25c25f7e7c8822) 
+10:16:08 OK  
+09:53:29 creation BDD 
+2019/01/13 21:01:29 mailValidation(blaloyer@msn.com, 5c3bb3593778b5c3bb35937805) 
+09:53:29 OK  
+05:27:07 creation BDD 
+2019/02/28 17:02:07 mailValidation(ruardemilie@gmail.com, 5c7819ebbdb555c7819ebbdb9e) 
+05:27:07 OK  
+08:06:13 creation BDD 
+2019/03/02 20:03:13 mailValidation(steffanye@yahoo.fr, 5c7ae235156e55c7ae23515727) 
+08:06:13 OK  

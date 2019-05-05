@@ -1,0 +1,274 @@
+@font-face { 	
+	font-family: "CenturyGothic"; 
+	src: url('http://ecocompare.com/badge/css/font/GOTHIC.TTF');
+}
+
+
+#ecocompare_webservice{
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+	font-family: "CenturyGothic", Century Gothic;
+	font-style : normal;text-shadow: none;
+	
+}
+
+#badge_encart{
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+	font-size : 12px;
+	font-family: "CenturyGothic", Century Gothic;
+	width : 227px;
+	height : 150px;
+	background : white;
+	border: 1px solid #a9a9a9;
+	-webkit-border-radius: 29px;
+	-moz-border-radius: 29px;
+	border-radius: 29px;
+	padding-right : 7px;
+	padding-left : 5px;
+	padding-top : 0px;
+	padding-bottom : 2px;
+	font-style : normal;text-shadow: none;
+}
+
+#badge_bandeau_sup2{
+	height : 34px;
+	width : 239px;
+	-webkit-border-top-left-radius: 29px;
+	-webkit-border-top-right-radius: 29px;
+	-moz-border-radius-topleft: 29px;
+	-moz-border-radius-topright: 29px;
+	border-top-left-radius: 29px;
+	border-top-right-radius: 29px;
+	padding-left:0;
+	margin-left : -5px;
+	margin-top : 0px;
+	padding-top:0px;
+	margin-bottom : 0px;
+
+}
+
+.badge_bandeau_inf{
+	height : 30px;
+	width : 239px;
+	-webkit-border-bottom-left-radius: 29px;
+	-webkit-border-bottom-right-radius: 29px;
+	-moz-border-radius-bottomleft: 29px;
+	-moz-border-radius-bottomright: 29px;
+	border-bottom-left-radius: 29px;
+	border-bottom-right-radius: 29px;
+	padding-left:0;
+	margin-left : -5px;
+	margin-bottom : 0px;
+	margin-bottom:0px;
+	margin-top : -2px;
+	padding-top:2px;
+}
+
+
+#badge_l1, #badge_l2, #badge_l3{
+	font-size : 12px;
+	text-align : right;
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+
+}
+
+#badge_table, #badge_l1, #badge_l2, #badge_l3{
+padding: 0px!important;
+margin: 0px!important;
+border-collapse: collapse!important;
+border-spacing: 0px!important;
+
+}
+/*
+#badge_global{
+
+margin-left : 8px;
+border : none;
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+	font-size : 12px;
+}
+*/
+
+.badge_titre{
+	font-size : 12px;
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+}
+.badge_savoir_plus{
+	font-size : 10px;
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+}
+
+
+.badge_note1{
+font-size : 22px;
+	font-family: "CenturyGothic", Century Gothic;
+	font-weight: normal;
+}
+
+.logoBadge{
+	max-width: 230px;
+	display : block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top : 0px;
+	margin-bottom : -3px;
+}
+/*
+.gauge{
+	max-width: 120px;
+	padding-top : 10px;
+	margin-bottom : -5px;
+}*/
+
+.ecocompare_plus_lien{
+	max-width: 35px;
+	border : none;
+}
+.ecocompare_plus_lien:hover{
+	max-width: 35px;
+	border : none;
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.liensInfos{
+	font-size : 15px;
+	width : 100%;
+}
+.ecocompare_contact{
+	max-width: 68px;
+	border : none;
+}
+.ecocompare_contact:hover{
+	max-width: 68px;
+	border : none;
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+#ecocompare-l1{
+	margin-top : 0px;
+	max-width: 125px;
+	margin-bottom : -10px;
+}
+#ecocompare-l3{
+	max-width: 125px;
+	padding-top : 6px;
+	margin-bottom : -10px;
+	padding-bottom : 8px;
+}
+
+.titretotal{
+	/*padding-bottom : 50px;
+	padding-top : -4px;*/
+}
+
+.badge_plus{
+	max-width: 20px;
+	display : inline;
+	border : none;
+	margin-bottom : -6px;
+}
+.badge_plus:hover{
+	max-width: 20px;
+	display : inline;
+	border : none;
+	margin-bottom : -6px;
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.ecocompare_detail_texte{
+	width: 69%;
+	height: 100%;
+	overflow-y: auto;
+	border-right: 2px solid #88c92c;
+	padding-right : 2px;
+	float : left;
+}
+
+.ecocompare_detail_note{
+	width : 29%;
+	height: 20%;
+	float : right;
+	position : relative;
+	padding-top : 10%; 
+}
+
+.ecocompare_contenu_onglet{
+	height : 58%;
+}
+
+.ecocompare_div_avis{
+	border : 1px solid #b5b5b5;
+	-webkit-border-radius: 65px;
+	-moz-border-radius: 65px;
+	border-radius: 65px;
+	height : 50px;
+}
+.ecocompare_area_avis{
+	border : none; 
+	outline : none;
+	margin-left : 5%;
+	width : 80%;
+	height : 45px;
+	resize: none; 
+}
+
+.ecocompare_button_avis{
+	display : inline;
+	border : none;
+	float : right;
+	position : relative;
+	margin-right :   5%;
+	margin-top : 2%;
+	margin-bottom : 2%;
+	text-align : center;
+	outline:none;
+}
+
+.amelioration{
+	max-width : 20px;
+	margin-bottom : -3px;
+}
+
+.ecocompareSansBordure{
+	border : none;
+	text-align : center;
+	font-weight : bold;
+	font-size : 13px;
+	color :#88c92c;
+}
+
+.liensInfos{
+	color : #727272;
+}
+
+.ecocomparec1{
+ color : #727272;
+}
+
+.ecocomparec2{
+	color : #838383;
+}
+
+.ecocomparec3{
+color : #CF7844;
+}
+
+.ecocomparec4{
+color : #a9a9a9;
+}

@@ -1,0 +1,1 @@
+<? $this->labelCtrl->showCheckboxesType($this->getFormValue('labels'),$this->type_id); ?>

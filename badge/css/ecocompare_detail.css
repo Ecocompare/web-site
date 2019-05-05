@@ -1,0 +1,38 @@
+.catCritere{
+	font-weight : bold;
+	color :  #ff8000;
+	display : block;
+}
+
+.critere{
+	font-weight : bold;
+	display : block;
+}
+
+.verif{
+	margin-left: 30px;
+	display : block;	
+}
+
+.invisible{
+	display: none;	
+}
+
+.visible{
+	display: block;
+}
+
+
+.titreSante{
+	font-weight : bold;
+	color :  #ff8000;
+	display : block;
+}
+
+.boutonexpand{
+	margin-bottom : -3px;
+}
+
+.detail_ecocompare{
+
+}

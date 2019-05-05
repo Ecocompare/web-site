@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+
+<title>RSS Reader</title>
+
+<meta name="author" content="Idnext" />
+<meta name="version" content="1.0.2" />
+
+<meta name="apiVersion" content="1.0" />
+<meta name="inline" content="true" />
+<meta name="autoRefresh" content="20" />
+<meta name="debugMode" content="true" />
+
+<link rel="stylesheet" type="text/css" href="http://www.netvibes.com/themes/uwa/style.css" />
+<script type="text/javascript" src="http://www.netvibes.com/js/UWA/load.js.php?env=Standalone"></script>
+
+<widget:preferences>
+  <preference name="feedUrl" type="text" label="URL" defaultValue="http://www.ecocompare.com/index.php?ctrl=Rss&action=show" />
+  <preference name="nbTitles" type="range" label="Number of items to display" defaultValue="10" step="1" min="1" max="25" />
+  <preference name="search" type="hidden" defaultValue="" />
+</widget:preferences>
+
+<script type="text/javascript">
+
+var RSSReader = {}
+
+RSSReader.feed = false;
+
+RSSReader.display = function(feed) {
+    
+    widget.log('RSSReader.display');
+    
+    if(feed) RSSReader.feed = feed;
+    
+    widget.preferences[1].max = RSSReader.feed.items.length; // little cool hack ;-)
+    
+    var feedList = widget.createElement('ul');
+    feedList.className = 'nv-feedList';
+    
+    var j = 0;
+    
+    var search = widget.getValue('search');
+    
+    for(var i=0; i < RSSReader.feed.items.length; i++) {
+
+        if(j >= widget.getValue('nbTitles')) break;
+        
+        var item = RSSReader.feed.items[i];
+        var li = widget.createElement('li');
+        var a = widget.createElement('a');
+        a.href = item.link;
+        a.target = '_blank';
+        var displayTitle = item.title;
+        if(search != '') {
+            displayTitle = String.highlight(displayTitle, search);
+        }
+        a.innerHTML = displayTitle;
+        
+        var title = item.content.stripTags().truncate(255);
+        
+        a.desc = title;
+        a.onmouseover = function() {
+            UWA.Utils.setTooltip(this, this.desc, 250);
+        }
+        li.appendChild(a);
+        
+        var display = true;
+        
+        if( search != '' ) {
+          if( RSSReader.searchInString(search, item.title) == false && RSSReader.searchInString(search, item.content) == false )
+            display = false;
+        }
+        
+        if(display) { feedList.appendChild(li); j++; }
+        
+    }
+    if(widget.getValue('search') != '') {
+         widget.setSearchResultCount(j);
+    }
+    widget.setBody(feedList);
+}
+
+RSSReader.searchInString = function(query, str) {
+  var test = str.toLowerCase().indexOf( query.toLowerCase() );
+  if( test != -1 ) return true
+  return false;
+}
+
+widget.onLoad = function() {
+  widget.log('RSSReader.onLoad');
+  UWA.Data.getFeed(widget.getValue('feedUrl'), RSSReader.display);
+}
+
+widget.onRefresh = widget.onLoad;
+
+widget.data.search = ''; // Reset search when the module load
+
+widget.onSearch = function(query) {
+  widget.log('RSSReader.onSearch');
+  widget.setValue('search', query);
+  if(RSSReader.feed) RSSReader.display();
+}
+
+widget.onResetSearch = function() {
+  widget.log('RSSReader.onResetSearch');
+  widget.setValue('search', '');
+  if(RSSReader.feed) RSSReader.display();
+}
+
+</script>
+
+</head>
+<body>
+<p>Loading ...</p>
+</body>
+</html>

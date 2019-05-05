@@ -1,0 +1,91 @@
+#ecocompare_navigation{	
+	width : 100%;
+	text-align : center;
+	font-size : 15px;
+	margin-top: 9px;
+	color : #727272;
+
+}
+
+ .ecocompare_onglet{
+	display : inline;
+	text-align:center;
+	padding-right : 2%;
+	padding-left : 2%;
+
+	border-top:2px solid white;
+	border-left:1px solid white;
+	border-right:1px solid white;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+ }
+ 
+ .entree{ 
+	display : inline;
+	cursor : pointer;
+	padding-right : 2%;
+	padding-left : 2%;
+	text-align:center;
+	box-shadow: -1px 2px 5px 3px #f8f8e3 inset;	
+	
+	border-top:2px solid #e4f4cd;
+	border-left:1px solid #d9efb8;
+	border-right:1px solid #d9efb8;
+
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.sortie{
+	display : inline;
+	padding-right : 2%;
+	padding-left : 2%;
+	text-align:center;
+	background : white;
+	cursor : pointer;
+	border-top:2px solid white;
+	border-left:1px solid white;
+	border-right:1px solid white;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.encours{	
+	display : inline;
+	padding-right : 2%;
+	padding-left : 2%;
+	text-align:center;
+	cursor : pointer;
+	box-shadow: -1px 2px 5px 3px #f8f8e3 inset;	
+
+	border-top:1px solid #abdd64;
+	border-left:2px solid #88c92c;
+	border-right:2px solid #88c92c;
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.line{
+	background : #88c92c;
+	height : 2px;
+	width : 100%;
+	border-bottom : 1px groove #88c92c;
+	margin-right : auto;
+	margin-left : auto;
+}

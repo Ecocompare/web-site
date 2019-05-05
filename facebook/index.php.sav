@@ -1,0 +1,244 @@
+<?php
+
+require 'src/facebook.php';
+require_once '../models/Db.php';
+$db = new Db();
+$GLOBALS['base'] = "http://www.ecocompare.com/";
+$DEBUG=0;
+
+// Create our Application instance (replace this with your appId and secret).
+$fb = new Facebook(array(
+  'appId'  => '123581301002800',
+  'secret' => 'd7244817d3aa03a09e7529768ada749c',
+  'cookie' => true,
+));
+
+$app_canvas = 'http://apps.facebook.com/ecocompare/'; 
+
+
+// On r?p? la session Facebook de l'utilisateur 
+ 
+ if ($DEBUG==0) {
+ $session = $fb->getSession(); 
+ $me = null; // On teste si la session existe 
+
+
+ if ($session) { try { // On r?p? l'UID de l'utilisateur Facebook courant 
+ $uid = $fb->getUser(); 
+ // On r?p? les infos de base de l'utilisateur 
+ $me = $fb->api('/me'); } 
+ 
+ catch (FacebookApiException $e) { // S'il y'a un probl? lors de la r?p, perte de session entre temps, suppression des autorisations... 
+ // On r?p? l'URL sur laquelle on devra rediriger l'utilisateur pour le r?entifier sur l'application 
+
+ $loginUrl = $fb->getLoginUrl( array( 'canvas' => 1, 'req_perms' => 'publish_stream,email','fbconnect' => 0 ) ); 
+  // On le redirige en JS (header PHP pas possible) 
+  
+ echo "<script type='text/javascript'>top.location.href='".$loginUrl."';</script>"; exit(); } 
+ 
+ } 
+ 
+ else { // Si l'utilisateur n'a pas de session 
+ // On r?p? l'URL sur laquelle on devra rediriger l'utilisateur pour le r?entifier sur l'application 
+ $loginUrl = $fb->getLoginUrl( array( 'canvas' => 1, 'req_perms' => 'publish_stream,email', 'fbconnect' => 0 ) ); 
+ // On le redirige en JS (header PHP pas possible) 
+  echo "<script type='text/javascript'>top.location.href='".$loginUrl."';</script>"; exit(); } 
+
+}
+
+$user_id = $me['id']; 
+$user_email = $me['email'];
+
+//on met ?our la table user pur indiquer que vient de facebook
+if ($user_email!='') {
+$query="update iphone_users set FB_id='$user_id' where email like '$user_email'";
+$results = mysql_query($query);
+}
+
+
+//$curl = curl_init("https://graph.facebook.com/me/feed");
+//curl_setopt($curl,CURLOPT_POST, true);
+//curl_setopt($curl,CURLOPT_POSTFIELDS,$post); 
+//curl_exec($curl);
+//curl_close($curl); 
+
+?>
+
+<html>
+
+	<head>
+ <link rel="stylesheet" href="<?=$GLOBALS['base']?>/style/styles.css" type="text/css" />
+
+
+<script type="text/javascript">
+	
+		function publishWall() {
+    FB.ui(
+    {
+      method: 'stream.publish',
+      message: 'test',
+      attachment:
+      {
+        name: "Démo Symfony+Facebook",
+        caption: '',
+        description: "Une démo simple d'application Facebook avec Symfony et les dernières API Javascript et PHP de Facebook.",
+        href: "http://www.lexik.fr/blog/symfony/non-classe/exemple-dapplication-utilisant-la-graph-api-de-facebook-1187"
+      },
+      user_prompt_message: "Application de démo Symfony+Facebook"
+    },
+  
+   function(response) {
+							 if (response &amp;amp;&amp;amp; response.post_id) {
+							   alert('Post publié.');
+							 } else {
+							   alert('Post non publié.');
+							 }
+						   }
+						  }
+    );
+  }
+  
+
+	
+	</script> 
+
+	</head>
+
+
+    <h1>Scannez des codes-barre de produits et gagnez des cadeaux!</h1>
+
+
+<div class="iphonelistFB">	
+Bonjour, <?php  echo $me['name']; ?>. Vous &ecirc;tes sensibilis&eacute;(e) &agrave; l'&eacute;cologique et vous avez marre du greenwashing ? devenez un eco-acteur !<br/><br/>
+<H2>Pourquoi cette application ?</H2>
+Trop de produits sont pr&eacute;sent&eacute;s comme &eacute;cologiques, bon pour la plan&egrave;te ou l'environnement alors qu'ils ne le sont pas. Sur le guide internet <a href="http://www.ecocompare.com" target="_blank">ecocompare.com</a>, vous trouverez de nombreux produits dont les qualit&eacute;s &eacute;cologiques sont d&eacute;taill&eacute;es
+sur le cycle de vie (fabrication, utilisation ou fin de vie). Pour acc&eacute;l&eacute;rer le r&eacute;f&eacute;rencement de ces produits et donc lutter contre le greenwashing, nous vous proposons de participer &agrave; une exp&eacute;rience collaborative
+unique : gr&ecirc;ce &agrave; votre iPhone, vous devenez ecoacteur et scannez les produits dont vous souhaiteriez connaitre les r&eacute;elles qualit&eacute;s &eacute;cologiques<br/>
+
+Cette application facebook permet de suivre en temps r&eacute;el les votes des eco-acteurs. Chaque mois les 2 finalistes ayant le plus de scans, sont r&eacute;compens&eacute;s et recoivent des bons d'achats de la boutique <a href="http://www.decodurable.com" target="_blank">decodurable.com</a>.
+	
+	<link rel="image_src" href="http://www.ecocompare.com/images/ecoacteur.png" />
+	
+	<table class="participer"><tr><td><img src="http://www.ecocompare.com/images/ecoacteur.png" alt="mode eco-acteur"/ > </td><td><br/><p>
+	Pour participer, rien de plus simple : <br/><br/><ul>
+	<li> 1) T&eacute;l&eacute;chargez notre <a href="http://itunes.apple.com/fr/app/ecocompare/id393539838" target="_blank">application iPhone ecocompare</a>, gratuite</li>
+	<li> 2) Activez le mode eco-acteur et v&eacute;rifiez que l'adresse email soit la m&ecirc;me (dans mon compte) que celle de votre compte facebook (compte, param&egrave;tre du compte) </li>
+	<li> 3) Scannez les codes barre de produits <b>&eacute;cologiques</b> dont vous souhaiteriez connaitre les r&egrave;elles qualit&eacute;s environnementales</li>
+</ul>
+	<br/><strong>Mois de D&eacute;cembre : </strong>BRAVO Patrick Truong et J-R qui remportent chacun un bon d'achat de 25 ?</p>
+</td></tr></table>
+	<br/>
+	<h1><?php echo utf8_encode(ucwords ($db->getMonth(Date('m'))));?>: classement des 15 eco-acteurs les plus actifs </h1>
+			  
+	
+<p>Ce tableau r&eacute;capitule le classement des eco-acteurs ayant le plus scann&eacute;s de codes barre uniques pour le mois en cours avec leur <a href="http://itunes.apple.com/fr/app/ecocompare/id393539838" target="_blank">application ecocompare iPhone</a> (rafraichissement toutes les 10 minutes).</p>
+<br/>
+	<table >
+		<tr ><td>Position</td><td>Facebook</td><td>Nom</td><td>Nb de scan</td><td align="center">Photo</td></tr>
+<?php   $month=Date('m');
+				$query="SELECT A.iphone_id,email,name,tel,total,month,FB_id from iphone_query_month A, iphone_users B where A.iphone_id=B.iphone_id and month='$month' order by total desc";
+        $results = mysql_query($query); 
+ 
+ $i=0;        
+ $my_position=0;   
+ $my_scan=0;    
+ while ($row = mysql_fetch_assoc($results)) {
+	$i++;
+//mon classement
+	if ($row['FB_id']==$user_id) 
+	{$my_position=$i;
+   $my_scan=	$row['total'];
+}
+
+?>
+<tr <?php if ($row['FB_id']!=$user_id) echo "class='trdefault'"; else echo "class='trselect'";?>>
+	
+<td align="center" ><?=$i?></td>
+<td align="center"> 
+	<?php
+		if ($row['FB_id']!='') { echo "<img src=\"http://www.ecocompare.com/style/facebook.png\" alt=\"compte facebook\" width=\"32\"/>";}
+	?>
+			
+</td>
+	<td >
+		<?php
+		if ($row['FB_id']!='') {
+	
+	echo "<fb:name useyou=\"false\" linked=\"true\" uid=\"".$row['FB_id']."\" />";
+	
+	}
+	else
+	{
+	echo $row['name'];
+}?>
+</td>
+<td align="center"><?=$row['total']?></td>
+<td align="center">
+	<?php
+
+	if ($row['FB_id']=='') {
+
+	$repertoire=$GLOBALS['base'];
+	$baseweb="http://www.ecocompare.com/iphone/usersImages/";
+	$repertoire="/var/www/vhosts/ecocompare.com/httpdocs/iphone/usersImages/";
+	$fichier=$row['iphone_id'].".png";
+//echo $repertoire.$fichier;
+
+	if (file_exists($repertoire.$fichier)) echo "<img border='0' width='50' src='".$baseweb.$fichier."'>"; 
+}
+
+else
+{ $ecoacteur = $fb->api('/' . $row['FB_id']);
+	echo  "<img src=\"http://graph.facebook.com/".$row['FB_id']."/picture\" alt=\"".$ecoacteur['name']."\" />";
+}
+	?>
+
+</td>
+
+	</tr>
+<?}?>
+</table>
+
+<br/>
+<?php 
+
+if ($my_position!=0) {
+$user_first_name = $me['first_name'];
+$token = $session['access_token'];
+$message = "Message de test";
+$link = $app_canvas;
+$picture = "http://techbee.files.wordpress.com/2007/10/martine-perd-son-temps-sur-facebook.jpg";
+$name = "Application ecocompare";
+$caption = "$user_first_name vient participer, pourquoi pas toi ?";
+$description = "Message description !";
+$post = "message=$message&access_token=$token&link=$link&picture=$picture&name=$name&caption=$caption&description=$description";
+//echo "Publiez votre position et score <a href=\"#\" onclick=\"publishwall('".$message."','".$token."','".$link."','".$picture."','".$name."','".$caption."','".$description."');return false;\">sur votre mur</a> !";
+echo "Publiez votre position et score <a href=\"#\" onclick=\"publishwall();return false;\">sur votre mur</a> !";
+
+
+$attachment = array(
+		'access_token'=>$session['access_token'],
+		'message' => "Le message",
+                'name' => 'Mon appli',
+                'caption' => 'caption',
+                'link' => $app_canvas,
+                'description' => 'Une desciption',
+                'picture' => $picture,
+                );
+		
+//$fb->api('/me/feed/','post', $attachment);
+ 
+ 
+}
+?>
+
+<fb:comments xid="comments" canpost="false" candelete="false" returnurl="http://apps.facebook.com/ecocompare/">
+<fb:title>Votre avis</fb:title>
+</fb:comments>
+
+
+
+<br/>
+</div>
+
+</html>

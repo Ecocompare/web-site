@@ -1,0 +1,217 @@
+##php_value memory_limit 128M
+#php_value upload_max_filesize 20M
+#php_value post_max_size 20M
+#php_value max_execution_time 200
+#php_value max_input_time 200
+
+#AuthType Basic
+#AuthName "Some Description" 
+#AuthUserFile /var/www/ecocompare/.htpasswd 
+# Require valid-user 
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^ecocompare\.com$
+RewriteRule (.*) http://www.ecocompare.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteCond %{REQUEST_URI} (/|\.php|\.html|\.feed|\.pdf|\.raw|/[^.]*)$  [NC]
+
+# traduction google à la volée
+RewriteRule ^en$ http://translate.google.com/translate?hl=en&;sl=fr&tl=en&u=http://www.ecocompare.com/$1 [R,NC]
+RewriteRule ^de$ http://translate.google.com/translate?hl=de&;sl=fr&tl=de&u=http://www.ecocompare.com/$1 [R,NC]
+RewriteRule ^es$ http://translate.google.com/translate?hl=es&;sl=fr&tl=es&u=http://www.ecocompare.com/$1 [R,L]
+
+
+#modifier les changements
+#RewriteRule ^Lexique-des-termes-lies-a-l-ecologie_a19.html(.*)$ /Lexique-des-termes-lies-a-l-ecologie_d19.html$1 [R,L]
+#RewriteRule ^Les-labels-et-demarches-ecologiques_a8.html(.*)$ /Les-labels-et-demarches-ecologiques_d8.html$1 [R,L]
+#RewriteRule ^Lexique-des-termes-lies-(.*).html(.*)$ /Lexique-des-termes-lies-a-l-ecologie_d19.html$2 [R,L]
+RewriteRule ^content/show/Pourquoi(.*) /Pourquoi-Ecocompare.html [R,L]
+
+RewriteRule ^articles_rss_ecocompare.html index.php?ctrl=Rss&action=articles
+RewriteRule ^produits_rss_ecocompare.html index.php?ctrl=Rss&action=products
+
+RewriteRule ^scanning-classement-IDF.html index.php?ctrl=Iphone&action=classement&mode=paris
+RewriteRule ^scanning-classement-drome.html index.php?ctrl=Iphone&action=classement&mode=drome
+RewriteRule ^scanning-classement-france.html index.php?ctrl=Iphone&action=classement&mode=france
+
+#Compte eco-acteur
+RewriteRule ^espace-eco-acteur.html index.php?ctrl=Account&action=show&%{QUERY_STRING}
+
+#Validation mail 
+RewriteRule ^validation_mail.html index.php?ctrl=FreeText&action=show&id=ValidationMail
+#mot de passe changé
+RewriteRule ^maj_pwd.html index.php?ctrl=FreeText&action=show&id=MajPwd
+
+
+#erreurs
+RewriteRule ^Proposez-un-produit.html index.php?ctrl=FreeText&action=show&id=Proposez-un-produit
+RewriteRule ^content/show/Proposez-un-produit /products?action=propose
+#RewriteRule ^products /
+
+RewriteRule ^demarche-ecocompare.html$ index.php?ctrl=FreeText&action=demarche
+RewriteRule ^conditions-utilisation.html$ index.php?ctrl=FreeText&action=cgu
+RewriteRule ^FAQ.html$ index.php?ctrl=FreeText&action=faq
+#RewriteRule ^conditions-utilisation.html$ index.php?ctrl=FreeText&action=show&id=CGU
+
+#images
+RewriteRule ^comparateur-produit-ecologique-(.*)-(.*).jpg companies?action=showImage&size=medium&id=$2 
+RewriteRule ^fiche-eco-produit-(.*)-(.*).jpg products?action=showImage&size=medium&id=$2
+RewriteRule ^comparateur-produit-eco-(.*)-(.*).jpg products?action=showImage&size=medium&id=$2 [L,QSA]
+RewriteRule ^bilan-produit-eco-(.*)-(.*)-(.*).png ecoimg.php?id=$2&lang=$3
+RewriteRule ^bilan-produit-eco-(.*)-(.*).png ecoimg.php?id=$2
+RewriteRule ^comparateur-marque-ecologique-(.*)-(.*).jpg companies?action=showImage&size=medium&id=$2
+RewriteRule ^ecoacteur-photo-(.*) index.php?ctrl=User&action=showImage&size=thumb&id=$1
+
+RewriteRule ^scanningparty.html http://www.ecocompare.com/index.php?ctrl=Iphone&action=classement&mode=kbane
+
+
+RewriteRule ^scanning-reglement.html index.php?ctrl=Iphone&id=1&year=2012&action=show&mode=reglement
+RewriteRule ^scanning-week.html index.php?ctrl=Iphone&id=1&year=2012&action=show&mode=scanparty
+RewriteRule ^scanning_week.html index.php?ctrl=Iphone&id=1&year=2012&action=show&mode=scanparty
+RewriteRule ^scan-party.html index.php?ctrl=Iphone&id=1&year=2012&action=show&mode=scanparty
+RewriteRule ^scanparty.html index.php?ctrl=Iphone&id=1&year=2012&action=show&&mode=scanparty
+RewriteRule ^eco-acteur-temoignages.html index.php?ctrl=Iphone&id=1&year=2012&action=testimonyshow
+RewriteRule ^eco-acteur-avis.html index.php?ctrl=User&action=userReview
+
+
+RewriteRule ^top-scan-produit-(.*).html http://www.ecocompare.com/index.php?ctrl=Company&action=TopProducts&brand=$1
+
+
+RewriteRule ^eco-acteur-gagnants-janvier2011.html index.php?ctrl=Iphone&action=show&id=$2&id=01&year=2011
+RewriteRule ^eco-acteur-gagnants-fevrier2011.html index.php?ctrl=Iphone&action=show&id=$2&id=02&year=2011
+RewriteRule ^eco-acteur-gagnants-mars2011.html index.php?ctrl=Iphone&action=show&id=$2&id=03&year=2011
+RewriteRule ^eco-acteur-gagnants-avril2011.html index.php?ctrl=Iphone&action=show&id=$2&id=04&year=2011
+RewriteRule ^eco-acteur-gagnants-mai2011.html index.php?ctrl=Iphone&action=show&id=$2&id=05&year=2011
+RewriteRule ^eco-acteur-gagnants-juin2011.html index.php?ctrl=Iphone&action=show&id=$2&id=06&year=2011
+RewriteRule ^eco-acteur-gagnants-juillet2011.html index.php?ctrl=Iphone&action=show&id=$2&id=07&year=2011
+RewriteRule ^eco-acteur-gagnants-aout2011.html index.php?ctrl=Iphone&action=show&id=$2&id=08&year=2011
+RewriteRule ^eco-acteur-gagnants-septembre2011.html index.php?ctrl=Iphone&action=show&id=$2&id=09&year=2011
+RewriteRule ^eco-acteur-gagnants-octobre2011.html index.php?ctrl=Iphone&action=show&id=$2&id=10&year=2011
+RewriteRule ^eco-acteur-gagnants-novembre2011.html index.php?ctrl=Iphone&action=show&id=$2&id=11&year=2011
+RewriteRule ^eco-acteur-gagnants-decembre2011.html index.php?ctrl=Iphone&action=show&id=$2&id=12&year=2011
+
+RewriteRule ^eco-acteur-gagnants-janvier2012.html index.php?ctrl=Iphone&action=show&id=$2&id=01&year=2012
+RewriteRule ^eco-acteur-gagnants-fevrier2012.html index.php?ctrl=Iphone&action=show&id=$2&id=02&year=2012
+RewriteRule ^eco-acteur-gagnants-mars2012.html index.php?ctrl=Iphone&action=show&id=$2&id=03&year=2012
+RewriteRule ^eco-acteur-gagnants-avril2012.html index.php?ctrl=Iphone&action=show&id=$2&id=04&year=2012
+RewriteRule ^eco-acteur-gagnants-mai2012.html index.php?ctrl=Iphone&action=show&id=$2&id=05&year=2012
+RewriteRule ^eco-acteur-gagnants-juin2012.html index.php?ctrl=Iphone&action=show&id=$2&id=06&year=2012
+RewriteRule ^eco-acteur-gagnants-juillet2012.html index.php?ctrl=Iphone&action=show&id=$2&id=07&year=2012
+RewriteRule ^eco-acteur-gagnants-aout2012.html index.php?ctrl=Iphone&action=show&id=$2&id=08&year=2012
+RewriteRule ^eco-acteur-gagnants-septembre2012.html index.php?ctrl=Iphone&action=show&id=$2&id=09&year=2012
+RewriteRule ^eco-acteur-gagnants-octobre2012.html index.php?ctrl=Iphone&action=show&id=$2&id=10&year=2012
+RewriteRule ^eco-acteur-gagnants-novembre2012.html index.php?ctrl=Iphone&action=show&id=$2&id=11&year=2012
+RewriteRule ^eco-acteur-gagnants-decembre2012.html index.php?ctrl=Iphone&action=show&id=$2&id=12&year=2012
+
+RewriteRule ^eco-acteur-gagnants-janvier.html index.php?ctrl=Iphone&action=show&id=$2&id=01&year=2016
+RewriteRule ^eco-acteur-gagnants-fevrier.html index.php?ctrl=Iphone&action=show&id=$2&id=02&year=2016
+RewriteRule ^eco-acteur-gagnants-mars.html index.php?ctrl=Iphone&action=show&id=$2&id=03&year=2016
+RewriteRule ^eco-acteur-gagnants-avril.html index.php?ctrl=Iphone&action=show&id=$2&id=04&year=2016
+RewriteRule ^eco-acteur-gagnants-mai.html index.php?ctrl=Iphone&action=show&id=$2&id=05&year=2016
+RewriteRule ^eco-acteur-gagnants-juin.html index.php?ctrl=Iphone&action=show&id=$2&id=06&year=2016
+RewriteRule ^eco-acteur-gagnants-juillet.html index.php?ctrl=Iphone&action=show&id=$2&id=07&year=2016
+RewriteRule ^eco-acteur-gagnants-aout.html index.php?ctrl=Iphone&action=show&id=$2&id=08&year=2016
+RewriteRule ^eco-acteur-gagnants-septembre.html index.php?ctrl=Iphone&action=show&id=$2&id=09&year=2016
+RewriteRule ^eco-acteur-gagnants-octobre.html index.php?ctrl=Iphone&action=show&id=$2&id=10&year=2016
+RewriteRule ^eco-acteur-gagnants-novembre.html index.php?ctrl=Iphone&action=show&id=$2&id=11&year=2016
+RewriteRule ^eco-acteur-gagnants-decembre.html index.php?ctrl=Iphone&action=show&id=$2&id=12&year=2016
+
+
+RewriteRule ^labels index.php?ctrl=Label&%{QUERY_STRING} 
+RewriteRule ^typepdt index.php?ctrl=Typepdt&%{QUERY_STRING}
+
+RewriteRule ^Proposez-un-produit /products?action=propose
+RewriteRule ^Proposez-un-produit.html /products?action=propose
+RewriteRule ^Userlist.html index.php?ctrl=Iphone&action=show&id=$2&year=2014&%{QUERY_STRING}
+RewriteRule ^UserList.html index.php?ctrl=Iphone&action=show&id=$2&year=2014&%{QUERY_STRING}
+RewriteRule ^ecoacteur-iphone.html index.php?ctrl=Iphone&action=show&id=$2&year=2015&%{QUERY_STRING}
+RewriteRule ^ecoacteur-smartphone.html index.php?ctrl=Iphone&action=show&id=$2&year=2015&%{QUERY_STRING}
+RewriteRule ^new-ecoacteur-smartphone.html index.php?ctrl=Iphone&action=show2&id=$2&year=2015&%{QUERY_STRING}
+
+RewriteRule ^products/browse/(.*)/(.*) index.php?ctrl=Product&action=browse&category=$1&page=$2&%{QUERY_STRING}
+RewriteRule ^products/browse/([0-9]+).* index.php?ctrl=Product&action=browse&category=$1&%{QUERY_STRING}
+RewriteRule ^products/browse/(.*) index.php?ctrl=Product&action=browse&category=$1&%{QUERY_STRING}
+RewriteRule ^products/show/([0-9]+)-(.*) index.php?ctrl=Product&action=show&id=$1&%{QUERY_STRING}
+RewriteRule ^selection-noel(.*) index.php?ctrl=Product&action=browse&category=64
+RewriteRule ^choixperso.html index.php?ctrl=Product&action=browse&%{QUERY_STRING}
+#RewriteRule ^Methodologie.html index.php?ctrl=FreeText&action=methodo&id=Methodologie
+RewriteRule ^Methodologie.html index.php?ctrl=FreeText&action=methodo&id=Methodologie
+
+RewriteRule ^products/(.*)/(.*) index.php?ctrl=Product&action=$1&id=$2&%{QUERY_STRING}
+RewriteRule ^products/(.*) index.php?ctrl=Product&action=$1&%{QUERY_STRING}
+RewriteRule ^labels/(.*) index.php?ctrl=Label&action=$1&%{QUERY_STRING}
+RewriteRule ^typepdt/(.*) index.php?ctrl=Typepdt&action=$1&%{QUERY_STRING}
+RewriteRule ^subratings/(.*) index.php?ctrl=Subrating&action=$1&%{QUERY_STRING}
+RewriteRule ^comments/(.*) index.php?ctrl=Comment&action=$1&&%{QUERY_STRING}
+RewriteRule ^categories/(.*) index.php?ctrl=Category&action=$1&%{QUERY_STRING}
+RewriteRule ^matches/(.*) index.php?ctrl=Match&action=$1&%{QUERY_STRING}
+RewriteRule ^articles/(.*)/(.*) index.php?ctrl=Article&action=$1&id=$2&%{QUERY_STRING}
+RewriteRule ^articles/(.*) index.php?ctrl=Article&action=$1&%{QUERY_STRING}
+RewriteRule ^actualite/(.*) index.php?ctrl=New&action=show&%{QUERY_STRING}
+RewriteRule ^actualite.html index.php?ctrl=New&action=browse&%{QUERY_STRING}
+
+RewriteRule ^articles/show/([0-9]+)-(.*) index.php?ctrl=Article&action=show&id=$1&%{QUERY_STRING}
+
+RewriteRule ^companies/(.*)/(.*) index.php?ctrl=Company&action=$1&id=$2&%{QUERY_STRING}
+RewriteRule ^companies/(.*) index.php?ctrl=Company&action=$1&%{QUERY_STRING}
+RewriteRule ^content/show/(.*)/* index.php?ctrl=FreeText&action=show&id=$1
+RewriteRule ^send* index.php?ctrl=FreeText&action=send%{QUERY_STRING}
+
+RewriteRule ^companies.html index.php?ctrl=Company&action=browse&%{QUERY_STRING}
+RewriteRule ^marques-responsables.html index.php?ctrl=Company&action=browse&%{QUERY_STRING}
+
+RewriteRule ^articles.html index.php?ctrl=Article&action=browse&%{QUERY_STRING}
+
+RewriteRule ^classement-lessives-ecologiques.html index.php?ctrl=Iphone&action=category&cat=lessive
+RewriteRule ^classement-liquide-vaisselle.html index.php?ctrl=Iphone&action=category&cat=liquide\%20vaisselle
+
+RewriteRule ^products index.php?ctrl=Product&%{QUERY_STRING}
+RewriteRule ^categories index.php?ctrl=Category&%{QUERY_STRING}
+RewriteRule ^articles index.php?ctrl=Article&%{QUERY_STRING}
+RewriteRule ^companies index.php?ctrl=Company&%{QUERY_STRING}
+RewriteRule ^login index.php?ctrl=Login&%{QUERY_STRING}
+RewriteRule ^content index.php?ctrl=FreeText&%{QUERY_STRING}
+RewriteRule ^subratings index.php?ctrl=Subrating&%{QUERY_STRING}
+
+RewriteRule ^subratings index.php?ctrl=Subrating&%{QUERY_STRING}
+RewriteRule ^ean index.php?ctrl=Ean&action=$1&%{QUERY_STRING}
+RewriteRule ^users/(.*) index.php?ctrl=User&action=$1&%{QUERY_STRING}
+
+RewriteRule ^search index.php?ctrl=Product&action=browse&%{QUERY_STRING}
+
+RewriteRule ^(.*)_p([0-9]+).html index.php?ctrl=Product&action=show&id=$2&%{QUERY_STRING}
+
+RewriteRule ^(.*)_rate([0-9]+).html index.php?ctrl=Rating&action=show&id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)_d([0-9]+).html index.php?ctrl=Article&action=show&id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)_a([0-9]+).html index.php?ctrl=Article&action=show&id=$2&%{QUERY_STRING}
+
+RewriteRule ^(.*)_c([0-9]+).html index.php?ctrl=Company&action=show&id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)_v([0-9]+).html index.php?ctrl=Company&action=show&enable=1&id=$2&%{QUERY_STRING}
+RewriteRule ^selection.html index.php?ctrl=Product&action=browse&category=selection&%{QUERY_STRING}
+RewriteRule ^selection-produits-responsables.html index.php?ctrl=Product&action=browse&category=selection&%{QUERY_STRING}
+RewriteRule ^new.html index.php?ctrl=Product&action=browse&category=new&%{QUERY_STRING}
+RewriteRule ^nouveaux-produits-responsables.html index.php?ctrl=Product&action=browse&category=new&%{QUERY_STRING}
+
+RewriteRule ^(.*)_r([0-9]+).html index.php?ctrl=Product&action=browse&category=$2&%{QUERY_STRING}
+
+
+
+RewriteRule ^matches.html index.php?ctrl=Match&action=browse&%{QUERY_STRING}
+RewriteRule ^(.*)_m([0-9]+).html index.php?ctrl=Match&action=show&matchid=$2&%{QUERY_STRING}
+
+RewriteRule ^news/(.*)/(.*) index.php?ctrl=New&action=$1&id=$2&%{QUERY_STRING}
+RewriteRule ^news/(.*) index.php?ctrl=New&action=$1&%{QUERY_STRING}
+RewriteRule ^news/show/([0-9]+)-(.*) index.php?ctrl=New&action=show&id=$1&%{QUERY_STRING}
+RewriteRule ^new.html index.php?ctrl=New&action=browse&%{QUERY_STRING}
+RewriteRule ^news$ index.php?ctrl=New&%{QUERY_STRING}
+RewriteRule ^(.*)_n([0-9]+).html index.php?ctrl=New&action=show&id=$2&%{QUERY_STRING}
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*).html index.php?ctrl=FreeText&action=show&id=$1&%{QUERY_STRING}
