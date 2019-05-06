@@ -26,7 +26,9 @@ The website is not responsive on mobile and tablet. The presentation layer (HTML
 The iPhone and Android mobile apps were made with Adobe Phonegap (separate projects) but must be modified for compatibility with the latest OS versions
 
 # Contact
-You can contact Patrick Montier (patrick@montier.com) or [Linkedin](https://www.linkedin.com/in/montierpatrick/)
+You can contact 
+* Patrick Montier (patrick@ecocompare.com) or [Linkedin](https://www.linkedin.com/in/montierpatrick/)
+* Florent Blondin (florent@ecocompare.com)
 
 # Licence
 GNU GPL 3.0
