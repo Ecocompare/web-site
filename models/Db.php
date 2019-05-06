@@ -2,9 +2,9 @@
 class Db{
 
 private $host = "localhost";
-  private $username = "usereco";
-  private $password = "vp2Ko23?";
-  private $database = "patrick_montier_";
+  private $username = "";
+  private $password = "";
+  private $database = "";
 	
 	private $bots=array('bingbot','ScoutJet','DotBot','Yahoo! Slurp','MJ12bot','Baiduspider/2.0','Twitmunin Crawler','msnbot-media','hotpage','AhrefsBot');
 	
