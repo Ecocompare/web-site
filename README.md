@@ -4,7 +4,7 @@ We believe that consumers have a major role in buying products that are more res
 Ecocompare plateform (web & [mobile](https://github.com/Ecocompare/mobile-app)) uses a reliable and serious methodology to rate products on the environmental, social and sanitary axes in order to make them know to the largest audience.
 Product information can be displayed on a mobile app or integrated on a web page though a widget application.
 # Purpose
-The goal of the https://www.ecocompare.com platform is to educate consumers by highlighting and explaining why one product is more environmentally friendly than another.
+The goal of the https://www.ecocompare.com platform is to sensitize consumers by highlighting and explaining why one product is more environmentally friendly than another.
 > Make our planet great again
 
 # Methodology
