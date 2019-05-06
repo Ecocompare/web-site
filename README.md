@@ -23,7 +23,10 @@ Positive because we value only the issues under control without blacklisting tho
 
 # Contribute
 The website is not responsive on mobile and tablet. The presentation layer (HTML / CSS) should be rewritten
-The iPhone and Android mobile apps were made with Adobe Phonegap (separate projects) but must be modified for compatibility with the latest OS versions.
+The iPhone and Android mobile apps were made with Adobe Phonegap (separate projects) but must be modified for compatibility with the latest OS versions
+
+# Contact
+You can contact Patrick Montier (patrick@montier.com) or [Linkedin](https://www.linkedin.com/in/montierpatrick/)
 
 # Licence
 GNU GPL 3.0
