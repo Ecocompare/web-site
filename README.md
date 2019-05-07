@@ -12,7 +12,7 @@ The goal of the https://www.ecocompare.com platform is to sensitize consumers by
 
 # ecocompare note display
 Ecocompare let you easilly add a sticker on a merchand or partner site including the note in normal or advanced mode.
-<img src="https://www.ecocompare.com/screenshots/badge.png"/>
+<img src="https://github.com/Ecocompare/web-site/tree/master/screenshots/badge.png"/>
 [You can see an example there](https://www.ecocompare.com/badge/badge.php)
 
 
