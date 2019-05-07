@@ -4,11 +4,15 @@ We believe that consumers have a major role in buying products that are more res
 Ecocompare plateform uses a reliable and serious methodology to rate products on the environmental, social and sanitary axes in order to make them know to the largest audience.
 
 # Devices
-Product information can be displayed on a [mobile app](https://github.com/Ecocompare/mobile-app) or integrated on a web page through a customizable widget application (HTML).
+Product information can be displayed on a [mobile app](https://github.com/Ecocompare/mobile-app) or integrated on a web page through a customizable widget application (HTML)
 
 # Purpose
 The goal of the https://www.ecocompare.com platform is to sensitize consumers by highlighting and explaining why one product is more environmentally friendly than another.
 > Make our planet great again
+
+# ecocompare note display
+Ecocompare let you easilly add a sticker on a merchand or partner site including the note in normal or advanced mode.
+[You can see an example there](https://www.ecocompare.com/badge/badge.php)
 
 # Methodology
 The method of notation was carried out with students of the University Paris VII then with engineers of the Verteego company. This evaluation is based on an original and totally transparent methodology, called qualitative and positive.
