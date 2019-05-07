@@ -14,7 +14,7 @@ The goal of the https://www.ecocompare.com platform is to sensitize consumers by
 The method of notation was carried out with students of the University Paris VII then with engineers of the Verteego company. This evaluation is based on an original and totally transparent methodology, called qualitative and positive.
 Qualitative because instead of a black box that calculates impacts from activity data (for example, the consumption of energy, water, etc.) we verify in co-production with the manufacturer the validation of criteria given over the entire life cycle of the product (and packaging) as well as the societal and health aspects of it.
 Positive because we value only the issues under control without blacklisting those who have yet to be worked.
-Download the [french guide](/Ecocompare/web-site/tree/master/methodologie/Guide_de_referencement_ecocompare.pdf)
+Download the [french guide](https://github.com/Ecocompare/web-site/tree/master/methodologie/Guide_de_referencement_ecocompare.pdf)
 
 # Framework
 * Custom PHP MVC framework (model, view, controler)
