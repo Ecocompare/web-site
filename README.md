@@ -12,7 +12,9 @@ The goal of the https://www.ecocompare.com platform is to sensitize consumers by
 
 # ecocompare note display
 Ecocompare let you easilly add a sticker on a merchand or partner site including the note in normal or advanced mode.
+<img src="https://www.ecocompare.com/screenshots/badge.png"/>
 [You can see an example there](https://www.ecocompare.com/badge/badge.php)
+
 
 # Methodology
 The method of notation was carried out with students of the University Paris VII then with engineers of the Verteego company. This evaluation is based on an original and totally transparent methodology, called qualitative and positive.
