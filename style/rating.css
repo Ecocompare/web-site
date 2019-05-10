@@ -1,0 +1,106 @@
+/*  styles for the unit rater
+--------------------------------------------------------- 
+ryan masuga, masugadesign.com
+ryan@masugadesign.com 
+Licensed under a Creative Commons Attribution 3.0 License.
+http://creativecommons.org/licenses/by/3.0/
+See readme.txt for full credit details.
+--------------------------------------------------------- */
+
+.ratingblock {
+	
+	}
+	
+.rate{
+	display:block;
+	font:12px"Lucida Grande", Helvetica, Arial, Sans-Serif;
+	
+	}
+
+.loading {
+	height: 30px;
+	background: url('../images/ajax-loader.png') 100% 50% no-repeat;
+	margin: 0px -30px;
+	}
+	
+.unit-rating { /* the UL */
+	list-style:none;
+	margin: 2px 5px 5px 8px;
+	padding:0px;
+	height: 20px;
+	position: relative;
+	background: url('../images/starrating.png') top left repeat-x;		
+	}
+
+.unit-rating li{
+    text-indent: -90000px;
+	padding:0px;
+	margin:0px;
+	/*\*/
+	float: left;
+	/* */
+	}
+	
+.unit-rating li a {
+	outline: none;
+	display:block;
+	width:20px;
+	height: 20px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+	}
+	
+.unit-rating li a:hover{
+	background: url('../images/starrating.png') left center;
+	z-index: 2;
+	left: 0px;
+	}
+
+.unit-rating a.r1-unit{left: 0px;}
+.unit-rating a.r1-unit:hover{width:20px;}
+.unit-rating a.r2-unit{left:20px;}
+.unit-rating a.r2-unit:hover{width: 40px;}
+.unit-rating a.r3-unit{left: 40px;}
+.unit-rating a.r3-unit:hover{width: 60px;}
+.unit-rating a.r4-unit{left: 60px;}	
+.unit-rating a.r4-unit:hover{width: 80px;}
+.unit-rating a.r5-unit{left: 80px;}
+.unit-rating a.r5-unit:hover{width: 100px;}
+.unit-rating a.r6-unit{left: 100px;}
+.unit-rating a.r6-unit:hover{width: 180px;}
+.unit-rating a.r7-unit{left: 180px;}
+.unit-rating a.r7-unit:hover{width: 210px;}
+.unit-rating a.r8-unit{left: 210px;}
+.unit-rating a.r8-unit:hover{width: 240px;}
+.unit-rating a.r9-unit{left: 240px;}
+.unit-rating a.r9-unit:hover{width: 270px;}
+.unit-rating a.r10-unit{left: 270px;}
+.unit-rating a.r10-unit:hover{width: 300px;}
+
+.unit-rating li.current-rating {
+	background: url('../images/starrating.png') left bottom;
+	position: absolute;
+	height: 20px;
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+	padding: 0px;
+	}
+
+.voted {color:#999;margin:5px 0 5px;}
+.thanks {color:#36AA3D;margin:5px 0 5px;}
+.static {color:#136699;margin:5px 10px 5px;}		
+
+.rating_system{
+	float:right;
+	margin-top:5px;
+	margin-right:5px;
+}
+
+.rate_title{
+	color:#136699;
+	font-weight:bold;
+}

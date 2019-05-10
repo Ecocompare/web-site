@@ -1,0 +1,69 @@
+#sample4{
+	border:1px solid #444;
+	box-shadow: 2px 2px 2px #aaa;
+}
+#sample4 td{
+	height:33px;
+	border:none;
+}
+
+
+/* vegetables */
+#env{
+	background-color:#4F4F4F;
+	border-right: 1px solid #2D6021 !important;
+}
+#env:before{
+	content:" ";
+	display: block;
+	background-image:url(reglette.png);
+	background-repeat:no-repeat;
+	background-position:2px 2px;
+	width:102px;
+	height:40px;
+}
+
+/* bread */
+#social{
+	background-color:#4F4F4F;
+	border-right: 1px solid #827807 !important;
+}
+#social:before{
+	content:" ";
+	display: block;
+	background-image:url(reglette.png);
+	background-repeat:no-repeat;
+	background-position:-100px 2px;
+	width:77px;
+	height:40px;
+	margin-left:2px;
+}
+
+
+/* meat */
+/* 	background-color: #FFAF6E; */
+#sante{
+	background-color: #4F4F4F;
+	border-right: 1px solid #AB5D1D !important;
+}
+#sante:before{
+	content:" ";
+	display: block;
+	background-image:url(reglette.png);
+	background-repeat:no-repeat;
+	background-position:-177px 2px;
+	width:70px;
+	height:40px;
+	margin-left:2px;
+}
+
+.rangeGrip {
+	width:10px;
+	height:19px;
+	cursor:e-resize;
+	background-image:url(slider.png);
+	z-index:8}
+
+.rangeDrag .rangeGrip,.rangeGrip:hover {
+	background-position:right}
+
